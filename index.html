@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=768">
+<STYLE>
+.content {
+  height: 4000px;
+  background: red;
+}
+.menu {
+  height: 100%;
+  background: blue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.item {
+  height: 200px;
+  margin: 0 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+</style>
+<script>
+let toggle = true;
+function contentChange() {
+  if (toggle) {
+    div.className = "menu";
+  } else {
+    div.className = "content";
+  }
+  toggle = !toggle;
+}
+window.onscroll = () => {
+  scrollTop.innerText = document.documentElement.scrollTop + " px";
+}
+</script>
+<div id="div" class="content">
+  <div class="item" style="background: yellow;"></div>
+  <div class="item" style="background: cyan;"></div>
+  <div class="item" style="background: magenta;"></div>
+</div>
+<div id="scrollTop" style="position: fixed; top: 10px; left: 10px;">0 px</div>
+<button onclick="contentChange()" style="position: fixed; top: 400px; left: 10px;">contenChange</button>
